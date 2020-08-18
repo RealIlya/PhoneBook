@@ -18,7 +18,7 @@ while True:
     choice = int(input("Ваш выбор: "))
 
     if choice == 1:
-        print("")
+        show(phone_book)
 
     elif choice == 2:
         tel = input("Введите номер телефона: ")
@@ -40,6 +40,13 @@ while True:
         else:
             print("Введенного номера не существует")
             continue
+
+    elif choice == 5:
+        with open("PhoneBook.csv", "w") as file:
+            for tel in phone_book:
+                value = phone_book[tel]
+                temp = tel + ";" + value[0] + ";" + value[1] + ";" + value[2] + ";" + value[3] + "\n"
+                file.write(temp)
 
     elif choice == 0:
         print("Оки-доки")
