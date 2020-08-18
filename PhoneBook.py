@@ -32,7 +32,7 @@ while True:
     elif choice == 3:  # TODO Редактирование записи
         print()
 
-    elif choice == 4:  # TODO Удаление записи
+    elif choice == 4:
         tel = input("Введите номер телефона для удаления")
         if tel in phone_book:
             note = phone_book.pop(tel)
