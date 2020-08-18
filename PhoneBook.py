@@ -13,26 +13,28 @@ phone_book = dict()
 
 welcome()
 
-menu()
-choice = int(input("Ваш выбор: "))
+while True:
+    menu()
+    choice = int(input("Ваш выбор: "))
 
-if choice == 1:
-    print("")
-elif choice == 2:
-    tel = input("Введите номер телефона")
-    value = input_data()
+    if choice == 1:
+        print("")
 
-    phone_book[tel] = value
+    elif choice == 2:   # TODO Сделать проверку существования телефона в записи
+        tel = input("Введите номер телефона")
+        value = input_data()
+        phone_book[tel] = value
 
-elif choice == 3:  # TODO Редактирование записи
-    print()
-elif choice == 4:  # TODO Удаление записи
-    print()
-elif choice == 0:  # TODO Выход из программы
-    print()
-else:
-    print("Не существует")
+    elif choice == 3:  # TODO Редактирование записи
+        print()
 
-value = list()
+    elif choice == 4:  # TODO Удаление записи
+        print()
 
-print(phone_book)
+    elif choice == 0:
+        print("Оки-доки")
+        break
+
+    else:
+        print("Не существует")
+        continue
