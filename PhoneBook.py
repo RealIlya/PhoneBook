@@ -11,47 +11,30 @@ from PhoneBook_lib import *
 
 phone_book = dict()
 
-welcome()
+welcome()  # Ввод приветствия программы
 
 while True:
-    menu()
+    menu()  # Вывод пунктов меню
     choice = int(input("Ваш выбор: "))
 
-    if choice == 1:
+    if choice == 1:  # Вывести телефонный справочник на экран
         show(phone_book)
 
-    elif choice == 2:
-        tel = input("Введите номер телефона: ")
-        if tel in phone_book:
-            print("Такой номер уже существует")
-            continue
-        else:
-            value = input_data()
-            phone_book[tel] = value
+    elif choice == 2:  # Добавить з2апись
+        input_record(phone_book)
 
-    elif choice == 3:  # TODO Редактирование записи
-        print()
+    elif choice == 3:  # Редактирование записи
+        edit_record(phone_book)
 
-    elif choice == 4:
-        tel = input("Введите номер телефона для удаления")
-        if tel in phone_book:
-            note = phone_book.pop(tel)
-            print(f"Запись {note} удалена")
-        else:
-            print("Введенного номера не существует")
-            continue
+    elif choice == 4:  # Удалить запись
+        delete_record(phone_book)
 
-    elif choice == 5:
-        with open("PhoneBook.csv", "w") as file:
-            for tel in phone_book:
-                value = phone_book[tel]
-                temp = tel + ";" + value[0] + ";" + value[1] + ";" + value[2] + ";" + value[3] + "\n"
-                file.write(temp)
+    elif choice == 5:  # Сохранить в файл
+        export_to_file(phone_book)
 
-    elif choice == 0:
+    elif choice == 0:  # Закрыть программу
         print("Оки-доки")
         break
 
     else:
         print("Не существует")
-        continue
