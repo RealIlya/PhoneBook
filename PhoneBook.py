@@ -20,7 +20,7 @@ while True:
     if choice == 1:  # Вывести телефонный справочник на экран
         show(phone_book)
 
-    elif choice == 2:  # Добавить з2апись
+    elif choice == 2:  # Добавить запись
         input_record(phone_book)
 
     elif choice == 3:  # Редактирование записи
